@@ -1,0 +1,39 @@
+.coupon-section {
+    margin: 20px 0;
+    padding: 15px;
+    background: #fff3e0;
+    border-radius: 8px;
+}
+
+.coupon-section input {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    width: 200px;
+    text-transform: uppercase;
+}
+
+.coupon-section input:focus {
+    outline: none;
+    border-color: #667eea;
+}
+
+.btn-apply {
+    background: #4caf50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-left: 10px;
+    transition: all 0.3s;
+}
+
+.btn-apply:hover {
+    background: #45a049;
+    transform: translateY(-2px);
+}
+
