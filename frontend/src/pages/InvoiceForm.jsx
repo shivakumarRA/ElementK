@@ -4,6 +4,7 @@ import InvoiceTable from '../components/InvoiceTable';
 import ItemForm from '../components/ItemForm';
 import CouponSection from '../components/CouponSection';
 import Message from '../components/Message';
+import { API_ENDPOINTS } from '../config/api';
 import './InvoiceForm.css';
 
 const InvoiceForm = () => {
@@ -39,7 +40,7 @@ const InvoiceForm = () => {
         }
 
         try {
-            const response = await fetch('/coupon/validate', {
+            const response = await fetch(API_ENDPOINTS.COUPON_VALIDATE, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -72,7 +73,7 @@ const InvoiceForm = () => {
         }
 
         try {
-            const response = await fetch('/coupon/validate', {
+            const response = await fetch(API_ENDPOINTS.COUPON_VALIDATE, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -116,7 +117,7 @@ const InvoiceForm = () => {
         };
 
         try {
-            const response = await fetch('/invoice', {
+            const response = await fetch(API_ENDPOINTS.INVOICES, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'

@@ -4,6 +4,7 @@ import InvoiceTable from '../components/InvoiceTable';
 import ItemForm from '../components/ItemForm';
 import CouponSection from '../components/CouponSection';
 import Message from '../components/Message';
+import { API_ENDPOINTS } from '../config/api';
 import './InvoiceForm.css';
 
 const EditInvoice = () => {
@@ -23,7 +24,7 @@ const EditInvoice = () => {
     const loadInvoice = async () => {
         try {
             setLoading(true);
-            const response = await fetch(`/invoice/${id}`);
+            const response = await fetch(API_ENDPOINTS.INVOICE_BY_ID(id));
             const data = await response.json();
 
             if (data.success && data.data) {
@@ -91,7 +92,7 @@ const EditInvoice = () => {
         }
 
         try {
-            const response = await fetch('/coupon/validate', {
+            const response = await fetch(API_ENDPOINTS.COUPON_VALIDATE, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -124,7 +125,7 @@ const EditInvoice = () => {
         }
 
         try {
-            const response = await fetch('/coupon/validate', {
+            const response = await fetch(API_ENDPOINTS.COUPON_VALIDATE, {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json'
@@ -168,7 +169,7 @@ const EditInvoice = () => {
         };
 
         try {
-            const response = await fetch(`/invoice/${id}`, {
+            const response = await fetch(API_ENDPOINTS.INVOICE_BY_ID(id), {
                 method: 'PUT',
                 headers: {
                     'Content-Type': 'application/json'

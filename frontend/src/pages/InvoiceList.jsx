@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import Message from '../components/Message';
+import { API_ENDPOINTS } from '../config/api';
 import './InvoiceList.css';
 
 const InvoiceList = () => {
@@ -16,7 +17,7 @@ const InvoiceList = () => {
     const loadInvoices = async () => {
         try {
             setLoading(true);
-            const response = await fetch('/invoice');
+            const response = await fetch(API_ENDPOINTS.INVOICES);
             const data = await response.json();
 
             if (data.success) {
@@ -41,7 +42,7 @@ const InvoiceList = () => {
         }
 
         try {
-            const response = await fetch(`/invoice/${id}`, {
+            const response = await fetch(API_ENDPOINTS.INVOICE_BY_ID(id), {
                 method: 'DELETE'
             });
 
